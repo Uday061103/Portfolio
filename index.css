@@ -17,46 +17,9 @@
     --text-secondary: #aaa;
 }
 
-html {
-    font-size: 62.5%;
-    overflow-x: hidden;
-}
-
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    min-height: 100vh;
-}
-
-/* Force visibility for all important elements */
-body, 
-section, 
-.header, 
-.navbar, 
-.logo, 
-h1, h2, h3, p, 
-.home-content, 
-.about-content, 
-.skills-container, 
-.project-box, 
-.contact form {
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: none !important;
-}
-
-/* Override ScrollReveal defaults */
-[data-sr-id] {
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* Ensure smooth transitions */
-.reveal-content {
-    transition: all 0.5s ease !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    transform: none !important;
 }
 
 .header {

@@ -59,35 +59,17 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 // Add scroll reveal animations
-// Initialize ScrollReveal
-const sr = ScrollReveal({
-    reset: false,
-    duration: 2000,
-    delay: 200
-});
-
-// Remove any existing reveal configurations
-ScrollReveal().destroy();
-
-// Add animations with a delay to ensure content is visible first
-document.addEventListener('DOMContentLoaded', () => {
-    // Force initial visibility
-    document.body.style.visibility = 'visible';
-    document.body.style.opacity = '1';
-
-    // Add animations
-    setTimeout(() => {
-        sr.reveal('.home-content', { origin: 'top' });
-        sr.reveal('.social-media, .btn', { origin: 'bottom' });
-        sr.reveal('.about-content', { origin: 'left' });
-        sr.reveal('.skills-container', { origin: 'bottom' });
-        sr.reveal('.project-box', { origin: 'bottom', interval: 200 });
-        sr.reveal('.contact form', { origin: 'bottom' });
-    }, 300);
-});
-
-// Backup visibility ensure
 window.addEventListener('load', () => {
-    document.body.style.visibility = 'visible';
-    document.body.style.opacity = '1';
+    const sr = ScrollReveal({
+        distance: '80px',
+        duration: 2000,
+        delay: 200
+    });
+
+    sr.reveal('.home-content', { origin: 'top' });
+    sr.reveal('.social-media, .btn', { origin: 'bottom' });
+    sr.reveal('.about-content', { origin: 'left' });
+    sr.reveal('.skills-container', { origin: 'bottom' });
+    sr.reveal('.project-box', { origin: 'bottom', interval: 200 });
+    sr.reveal('.contact form', { origin: 'bottom' });
 });
