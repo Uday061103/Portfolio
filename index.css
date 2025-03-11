@@ -17,9 +17,33 @@
     --text-secondary: #aaa;
 }
 
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Ensure text visibility */
+section, 
+.header,
+.navbar a,
+.logo,
+h1, h2, h3, p {
+    opacity: 1 !important;
+    visibility: visible !important;
+    color: var(--text-color);
+}
+
+/* Prevent ScrollReveal from hiding content */
+.reveal-content {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
 }
 
 .header {

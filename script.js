@@ -63,13 +63,26 @@ window.addEventListener('load', () => {
     const sr = ScrollReveal({
         distance: '80px',
         duration: 2000,
-        delay: 200
+        delay: 200,
+        reset: false,  // Prevent reset on scroll
+        beforeReveal: (element) => {
+            element.classList.add('reveal-content');
+        }
     });
 
-    sr.reveal('.home-content', { origin: 'top' });
-    sr.reveal('.social-media, .btn', { origin: 'bottom' });
-    sr.reveal('.about-content', { origin: 'left' });
-    sr.reveal('.skills-container', { origin: 'bottom' });
-    sr.reveal('.project-box', { origin: 'bottom', interval: 200 });
-    sr.reveal('.contact form', { origin: 'bottom' });
+    // Add a small delay before initializing ScrollReveal
+    setTimeout(() => {
+        sr.reveal('.home-content', { origin: 'top' });
+        sr.reveal('.social-media, .btn', { origin: 'bottom' });
+        sr.reveal('.about-content', { origin: 'left' });
+        sr.reveal('.skills-container', { origin: 'bottom' });
+        sr.reveal('.project-box', { origin: 'bottom', interval: 200 });
+        sr.reveal('.contact form', { origin: 'bottom' });
+    }, 100);
+});
+
+// Ensure content visibility on page load
+document.addEventListener('DOMContentLoaded', () => {
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = '1';
 });
