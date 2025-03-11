@@ -508,22 +508,10 @@ section {
 
 .tool-box {
     text-align: center;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 1rem;
+    background: var(--second-bg-color);
     transition: 0.3s ease;
-    width: 100%;
-    max-width: 200px;
-}
-
-.tool-box:hover {
-    transform: scale(1.05);
-    background: var(--main-color);
-}
-
-.tool-box:hover i,
-.tool-box:hover h4 {
-    color: var(--bg-color);
 }
 
 .tool-box i {
@@ -532,9 +520,35 @@ section {
     margin-bottom: 1rem;
 }
 
-.tool-box h4 {
-    font-size: 1.4rem;
-    color: var(--text-color);
+.platform-logo {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+    /* Debug outline */
+    /* outline: 1px solid red; */
+}
+
+/* Add specific styling for Render logo */
+.tool-box img[alt="Render"] {
+    width: 3rem;
+    height: 3rem;
+    object-fit: contain;
+}
+
+.tool-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.tool-box:hover .platform-logo {
+    filter: brightness(1.2);
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+    .platform-logo {
+        filter: brightness(0.9);
+    }
 }
 
 /* Media Queries */
