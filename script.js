@@ -59,30 +59,91 @@ contactForm.addEventListener('submit', (e) => {
 });
 
 // Add scroll reveal animations
-window.addEventListener('load', () => {
-    const sr = ScrollReveal({
-        distance: '80px',
-        duration: 2000,
-        delay: 200,
-        reset: false,  // Prevent reset on scroll
-        beforeReveal: (element) => {
-            element.classList.add('reveal-content');
-        }
-    });
+// Initialize ScrollReveal with modified settings
+const sr = ScrollReveal({
+    distance: '80px',
+    duration: 2000,
+    delay: 200,
+    reset: false,
+    mobile: true,
+    useDelay: 'once',
+    viewFactor: 0.2,
+    viewOffset: {
+        top: 50,
+        bottom: 50
+    }
+});
 
-    // Add a small delay before initializing ScrollReveal
+// Remove any existing reveal configurations
+ScrollReveal().destroy();
+
+// Add animations when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    // Ensure all content is visible first
+    document.querySelectorAll('section, .header, .navbar, .logo, h1, h2, h3, p')
+        .forEach(el => {
+            el.style.visibility = 'visible';
+            el.style.opacity = '1';
+        });
+
+    // Add animations with a slight delay
     setTimeout(() => {
-        sr.reveal('.home-content', { origin: 'top' });
-        sr.reveal('.social-media, .btn', { origin: 'bottom' });
-        sr.reveal('.about-content', { origin: 'left' });
-        sr.reveal('.skills-container', { origin: 'bottom' });
-        sr.reveal('.project-box', { origin: 'bottom', interval: 200 });
-        sr.reveal('.contact form', { origin: 'bottom' });
+        sr.reveal('.home-content', { 
+            origin: 'top',
+            distance: '80px',
+            duration: 2000,
+            reset: false
+        });
+        
+        sr.reveal('.social-media, .btn', { 
+            origin: 'bottom',
+            distance: '80px',
+            duration: 2000,
+            reset: false
+        });
+        
+        sr.reveal('.about-content', { 
+            origin: 'left',
+            distance: '80px',
+            duration: 2000,
+            reset: false
+        });
+        
+        sr.reveal('.skills-container', { 
+            origin: 'bottom',
+            distance: '80px',
+            duration: 2000,
+            reset: false
+        });
+        
+        sr.reveal('.project-box', { 
+            origin: 'bottom',
+            interval: 200,
+            distance: '80px',
+            duration: 2000,
+            reset: false
+        });
+        
+        sr.reveal('.contact form', { 
+            origin: 'bottom',
+            distance: '80px',
+            duration: 2000,
+            reset: false
+        });
     }, 100);
 });
 
-// Ensure content visibility on page load
-document.addEventListener('DOMContentLoaded', () => {
+// Backup visibility ensure
+window.addEventListener('load', () => {
     document.body.style.visibility = 'visible';
     document.body.style.opacity = '1';
+    
+    // Force visibility after a short delay
+    setTimeout(() => {
+        document.querySelectorAll('section, .header, .navbar, .logo, h1, h2, h3, p')
+            .forEach(el => {
+                el.style.visibility = 'visible';
+                el.style.opacity = '1';
+            });
+    }, 500);
 });
