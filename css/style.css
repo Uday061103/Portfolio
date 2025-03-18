@@ -1,17 +1,11 @@
-.platform-logo {
+.tool-box img.platform-logo {
   width: 24px;
   height: 24px;
   margin-bottom: 8px;
-  border: none;  /* Remove any borders */
-  outline: none; /* Remove any outlines */
+  filter: brightness(0.9);
+  transition: filter 0.3s ease;
 }
 
-.tool-box svg.platform-logo {
-  color: #46e3b7;  /* Render's brand color */
-  transition: color 0.3s ease;
-  display: block; /* Ensure proper block display */
-}
-
-.tool-box:hover svg.platform-logo {
-  color: #3ccca3;  /* Darker shade for hover */
+.tool-box:hover img.platform-logo {
+  filter: brightness(1.2);
 }
