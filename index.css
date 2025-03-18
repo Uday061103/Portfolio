@@ -159,6 +159,24 @@ section {
     font-size: 2.6rem;
 }
 
+.skill-box img.skill-logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-bottom: 0.5rem;
+  transition: filter 0.3s ease;
+}
+
+.skill-box:hover img.skill-logo {
+  filter: brightness(1.2);
+}
+
+/* Dark mode optimization */
+@media (prefers-color-scheme: dark) {
+  .skill-box img.skill-logo {
+    filter: brightness(0.9);
+  }
+}
+
 .project-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
